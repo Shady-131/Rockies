@@ -1,5 +1,5 @@
 import Logo from './Logo'
-import { IGIcon, TTIcon } from './SocialIcons'
+import { IGIcon, TTIcon, FBIcon } from './SocialIcons'
 import { T } from '../utils/helpers'
 
 const NAV_LINKS = [
@@ -12,20 +12,21 @@ const NAV_LINKS = [
 
 export default function Footer({ lang, goTo }) {
   return (
-    <footer style={{ background: '#0f0f0f', color: 'white', padding: '48px 28px 28px' }}>
+    <footer style={{ background: '#0f0f0f', color: 'white', padding: '48px 20px 28px' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 36, marginBottom: 44 }}>
+
+        <div className="footer-grid" style={{ marginBottom: 44 }}>
 
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 16 }}>
-              <Logo size={48} inverted />
+              <Logo size={46} inverted />
               <div>
                 <div style={{ fontWeight: 900, fontSize: 15, color: 'white' }}>ROCKIES</div>
                 <div style={{ fontSize: 11, color: '#555' }}>روكيز</div>
               </div>
             </div>
-            <p style={{ color: '#555', fontSize: 13, lineHeight: 1.7, maxWidth: 200 }}>
+            <p style={{ color: '#555', fontSize: 13, lineHeight: 1.7, maxWidth: 200, margin: 0 }}>
               {T(lang, 'Crispy fried chicken made with passion in the heart of Maadi.', 'فراخ مقلية بحب من قلب المعادي.')}
             </p>
           </div>
@@ -45,13 +46,13 @@ export default function Footer({ lang, goTo }) {
             ))}
           </div>
 
-          {/* Contact */}
+          {/* Contact — phone only, no WhatsApp */}
           <div>
             <div style={{ fontWeight: 800, fontSize: 11, color: '#555', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 14 }}>
               {T(lang, 'Contact', 'تواصل')}
             </div>
-            <a href="https://wa.me/201501044604" target="_blank" rel="noreferrer"
-              style={{ color: '#666', fontSize: 13, display: 'block', marginBottom: 8, textDecoration: 'none' }}>
+            <a href="tel:01501044604"
+              style={{ color: '#ccc', fontSize: 14, display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none', fontWeight: 600, marginBottom: 8 }}>
               📞 01501044604
             </a>
             <a href="https://maps.app.goo.gl/J67b6NooijHUG7867?g_st=ic" target="_blank" rel="noreferrer"
@@ -62,23 +63,26 @@ export default function Footer({ lang, goTo }) {
 
           {/* Social */}
           <div>
-            <div style={{ fontWeight: 800, fontSize: 11, color: '#555', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 14 }}>
+            <div style={{ fontWeight: 800, fontSize: 11, color: '#555', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16 }}>
               {T(lang, 'Follow', 'تابعنا')}
             </div>
-            <a href="https://www.instagram.com/rockies.eg" target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 11, textDecoration: 'none' }}>
-              <div style={{ width: 32, height: 32, borderRadius: 8, background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <IGIcon size={15} />
-              </div>
-              <span style={{ color: '#777', fontSize: 13 }}>@rockies.eg</span>
-            </a>
-            <a href="https://www.tiktok.com/@rockies.eg" target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', gap: 9, textDecoration: 'none' }}>
-              <div style={{ width: 32, height: 32, borderRadius: 8, background: '#111', border: '1px solid #222', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <TTIcon size={15} />
-              </div>
-              <span style={{ color: '#777', fontSize: 13 }}>@rockies.eg</span>
-            </a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <a href="https://www.instagram.com/rockies.eg" target="_blank" rel="noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                <IGIcon size={17} />
+                <span style={{ color: '#777', fontSize: 13 }}>@rockies.eg</span>
+              </a>
+              <a href="https://www.tiktok.com/@rockies.eg" target="_blank" rel="noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                <TTIcon size={17} />
+                <span style={{ color: '#777', fontSize: 13 }}>@rockies.eg</span>
+              </a>
+              <a href="https://www.facebook.com/rockies.eg" target="_blank" rel="noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                <FBIcon size={17} />
+                <span style={{ color: '#777', fontSize: 13 }}>rockies.eg</span>
+              </a>
+            </div>
           </div>
 
         </div>
